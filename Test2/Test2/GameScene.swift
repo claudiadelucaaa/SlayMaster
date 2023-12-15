@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -17,12 +18,19 @@ class GameScene: SKScene {
     var gameIsPaused = false
     {
         didSet {
-            endGame()
-        }
+                if gameIsPaused {
+                    backgroundMusicPlayer?.pause()
+                } else {
+                    backgroundMusicPlayer?.play()
+                }
+                endGame()
+            }
     }
     var timeInterval: TimeInterval = 4.0
     var fast: TimeInterval = 10.0
     
+    var musicNode = SKAudioNode()
+    var backgroundMusicPlayer: AVAudioPlayer?
 //    var jumpCount = 0
     
     var timer = Timer()
@@ -79,12 +87,22 @@ class GameScene: SKScene {
         createWall()
         // createAudio()
         startSpawn()
+        if let musicURL = Bundle.main.url(forResource: "Sissy That Walk", withExtension: "mp3") {
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
+                backgroundMusicPlayer?.numberOfLoops = -1 // Loop indefinitely
+                backgroundMusicPlayer?.volume = 0.5 // Adjust the volume as needed
+                backgroundMusicPlayer?.play()
+            } catch {
+                print("Error loading background music: \(error.localizedDescription)")
+            }
+        }
         
         addChild(heroNode)
         addChild(groundNode)
         addChild(wallNode)
         addChild(secondWallNode)
-        //      addChild(musicNode)
+        addChild(musicNode)
     }
     
     
@@ -155,6 +173,14 @@ class GameScene: SKScene {
         //        heroSpriteNode.run(moveLeftRepeat)
         
         heroNode.addChild(heroSpriteNode)
+    }
+    func createAudio() {
+        guard let musicURL = Bundle.main.url(forResource: "Sissy That Walk", withExtension: "mp3") else {
+            fatalError()
+        }
+        musicNode = SKAudioNode(url: musicURL)
+        musicNode.autoplayLooped = true
+        musicNode.run(SKAction.play())
     }
     
     // MARK: - Hero position
@@ -300,7 +326,7 @@ class GameScene: SKScene {
                 }
             }
             
-//            musicNode.run(SKAction.stop())
+            
             enemyNodeArray.forEach { node in
                 node.removeFromParent()
             }
@@ -352,12 +378,14 @@ extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.categoryBitMask == heroMask && contact.bodyB.categoryBitMask == enemyMask ||
             contact.bodyA.categoryBitMask == enemyMask && contact.bodyB.categoryBitMask == heroMask {
+            musicNode.run(SKAction.stop())
             heroDied()
             enemyDied()
         }
     }
     
     func enemyDied() {
+        
         for enemyNode in enemyNodeArray {
             guard let enemySpriteNode = enemyNode.children.first as? SKSpriteNode else { continue }
             
