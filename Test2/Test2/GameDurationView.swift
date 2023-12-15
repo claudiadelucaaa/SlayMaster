@@ -20,8 +20,7 @@ struct GameDurationView: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .background(Color(UIColor.systemGray6))
-                .opacity(0.5)
+                .foregroundStyle(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 0.5)))
                 .cornerRadius(10)
                 .frame(height:  60)
             HStack {

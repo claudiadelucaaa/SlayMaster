@@ -21,7 +21,9 @@ struct GameScoreView: View {
         .frame(minWidth: 100)
         .padding(24)
         .foregroundColor(.black)
-        .background(Color(UIColor.systemGray6))
+        .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 0.5)
+))
+
         .cornerRadius(10)
     }
 }
