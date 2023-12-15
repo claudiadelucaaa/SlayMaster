@@ -31,7 +31,7 @@
 		F6BD3C662B2C44B8008F1830 /* Sissy That Walk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6BD3C652B2C44B8008F1830 /* Sissy That Walk.mp3 */; };
 		F6D4A9CF2B2C8CE400DD17A4 /* Baloney.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6D4A9CE2B2C8CE400DD17A4 /* Baloney.mp3 */; };
 		F6D4A9D12B2C8EE100DD17A4 /* okrrr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6D4A9D02B2C8EE100DD17A4 /* okrrr.mp3 */; };
-		F6D4A9D32B2C94D600DD17A4 /* VeryAttacked.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6D4A9D22B2C94D600DD17A4 /* VeryAttacked.mp3 */; };
+		F6D4A9D52B2C955D00DD17A4 /* VeryAttacked.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6D4A9D42B2C955D00DD17A4 /* VeryAttacked.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,7 @@
 		F6BD3C652B2C44B8008F1830 /* Sissy That Walk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sissy That Walk.mp3"; sourceTree = "<group>"; };
 		F6D4A9CE2B2C8CE400DD17A4 /* Baloney.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Baloney.mp3; sourceTree = "<group>"; };
 		F6D4A9D02B2C8EE100DD17A4 /* okrrr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = okrrr.mp3; path = ../okrrr.mp3; sourceTree = "<group>"; };
-		F6D4A9D22B2C94D600DD17A4 /* VeryAttacked.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = VeryAttacked.mp3; path = ../../../../../Desktop/VeryAttacked.mp3; sourceTree = "<group>"; };
+		F6D4A9D42B2C955D00DD17A4 /* VeryAttacked.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = VeryAttacked.mp3; path = ../../../../../Desktop/VeryAttacked.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 				7853FC2C2B29A41D008B06D8 /* Constant.swift */,
 				7853FC302B29A4F0008B06D8 /* GameOverView.swift */,
 				F6D4A9CE2B2C8CE400DD17A4 /* Baloney.mp3 */,
+				F6D4A9D42B2C955D00DD17A4 /* VeryAttacked.mp3 */,
 				F6D4A9D02B2C8EE100DD17A4 /* okrrr.mp3 */,
-				F6D4A9D22B2C94D600DD17A4 /* VeryAttacked.mp3 */,
 				F6BD3C652B2C44B8008F1830 /* Sissy That Walk.mp3 */,
 			);
 			path = Test2;
@@ -190,7 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D4A9D32B2C94D600DD17A4 /* VeryAttacked.mp3 in Resources */,
+				F6D4A9D52B2C955D00DD17A4 /* VeryAttacked.mp3 in Resources */,
 				654F87BC2B2AFFCF005DD4EA /* Atlantis-RegularSmallCaps.ttf in Resources */,
 				654F87BB2B2AFFCF005DD4EA /* AtlantisText-Bold.ttf in Resources */,
 				654F87B92B2AFFCF005DD4EA /* AtlantisText-Regular.ttf in Resources */,
