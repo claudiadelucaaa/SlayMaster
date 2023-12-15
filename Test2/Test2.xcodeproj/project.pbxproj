@@ -10,6 +10,7 @@
 		654127982B221C8C007789E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654127972B221C8C007789E4 /* AppDelegate.swift */; };
 		6541279E2B221C8C007789E4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541279D2B221C8C007789E4 /* GameScene.swift */; };
 		654127A52B221C8C007789E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654127A42B221C8C007789E4 /* Assets.xcassets */; };
+		654180762B2C8F6100A9E179 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654180752B2C8F6100A9E179 /* PauseView.swift */; };
 		654F87B92B2AFFCF005DD4EA /* AtlantisText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 654F87B42B2AFFCF005DD4EA /* AtlantisText-Regular.ttf */; };
 		654F87BA2B2AFFCF005DD4EA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 654F87B52B2AFFCF005DD4EA /* README.txt */; };
 		654F87BB2B2AFFCF005DD4EA /* AtlantisText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 654F87B62B2AFFCF005DD4EA /* AtlantisText-Bold.ttf */; };
@@ -37,6 +38,7 @@
 		654127972B221C8C007789E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6541279D2B221C8C007789E4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		654127A42B221C8C007789E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		654180752B2C8F6100A9E179 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		654F87B22B2AFF9B005DD4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		654F87B42B2AFFCF005DD4EA /* AtlantisText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtlantisText-Regular.ttf"; sourceTree = "<group>"; };
 		654F87B52B2AFFCF005DD4EA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				654127A42B221C8C007789E4 /* Assets.xcassets */,
 				657DBF932B2358A20023AB98 /* Main.storyboard */,
 				654F87BE2B2B000E005DD4EA /* StartView.swift */,
+				654180752B2C8F6100A9E179 /* PauseView.swift */,
 				7853FC242B286F91008B06D8 /* GameDurationView.swift */,
 				7853FC262B286FB1008B06D8 /* GameScoreView.swift */,
 				7853FBFD2B276E63008B06D8 /* Arcade_GameLogic.swift */,
@@ -217,6 +220,7 @@
 				7853FC312B29A4F0008B06D8 /* GameOverView.swift in Sources */,
 				7853FC272B286FB1008B06D8 /* GameScoreView.swift in Sources */,
 				654F87BF2B2B000E005DD4EA /* StartView.swift in Sources */,
+				654180762B2C8F6100A9E179 /* PauseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
