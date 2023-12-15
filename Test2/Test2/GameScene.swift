@@ -174,14 +174,14 @@ class GameScene: SKScene {
         
         heroNode.addChild(heroSpriteNode)
     }
-    func createAudio() {
-        guard let musicURL = Bundle.main.url(forResource: "Sissy That Walk", withExtension: "mp3") else {
-            fatalError()
-        }
-        musicNode = SKAudioNode(url: musicURL)
-        musicNode.autoplayLooped = true
-        musicNode.run(SKAction.play())
-    }
+//    func createDeidAudio() {
+//        guard let musicURL = Bundle.main.url(forResource: "okrrr", withExtension: "mp3") else {
+//            fatalError()
+//        }
+//        musicNode = SKAudioNode(url: musicURL)
+//        musicNode.autoplayLooped = true
+//        musicNode.run(SKAction.play())
+//    }
     
     // MARK: - Hero position
     func createHero() {
@@ -378,7 +378,7 @@ extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.categoryBitMask == heroMask && contact.bodyB.categoryBitMask == enemyMask ||
             contact.bodyA.categoryBitMask == enemyMask && contact.bodyB.categoryBitMask == heroMask {
-            musicNode.run(SKAction.stop())
+//            musicNode.run(SKAction.stop())
             heroDied()
             enemyDied()
         }
@@ -419,11 +419,13 @@ extension GameScene {
         switch sideTouched(for: touchLocation) {
         case .right:
             self.isMovingToTheRight = true
+            playOkurrrSound()
             launchAttack(isRightSide: true)
             launch2Attack(isRightSide: true)
             //             print("ℹ️ Touching the RIGHT side.")
         case .left:
             self.isMovingToTheLeft = true
+            playOkurrrSound()
             launchAttack(isRightSide: false)
             launch2Attack(isRightSide: false)
             //             print("ℹ️ Touching the LEFT side.")
@@ -460,6 +462,7 @@ extension GameScene {
                 self.lacaSpriteNode.run(lacaAnim) {
                     
                     self.lacaSpriteNode.removeFromParent()
+//                    self.playOkurrrSound()
                 }
                 
             }
@@ -475,6 +478,7 @@ extension GameScene {
                 self.lacaSpriteNode.run(lacaAnim) {
                     
                     self.lacaSpriteNode.removeFromParent()
+//                    self.playOkurrrSound()
                 }
                 
             }
@@ -512,5 +516,12 @@ extension GameScene {
             }
         }
     }
-    
+    func playOkurrrSound() {
+        guard let okurrrSoundURL = Bundle.main.url(forResource: "okrrr", withExtension: "mp3") else {
+            fatalError("Error al obtener la URL del sonido 'okurrr'")
+        }
+        
+        let okurrrAction = SKAction.playSoundFileNamed(okurrrSoundURL.absoluteString, waitForCompletion: false)
+        self.run(okurrrAction)
+    }
 }
