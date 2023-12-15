@@ -28,6 +28,10 @@ struct ContentView: View {
         case .playing:
             GameView(currentGameState: $currentGameState)
                 .environmentObject(gameLogic)
+            
+        case .pause:
+            GameOverView(currentGameState: $currentGameState)
+                .environmentObject(gameLogic)
         
         case .gameOver:
             GameOverView(currentGameState: $currentGameState)

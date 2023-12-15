@@ -14,6 +14,7 @@ enum GameState {
     case firstTime
     case chooseChar
     case playing
+    case pause
     case gameOver
 }
 
