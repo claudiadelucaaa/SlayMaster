@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     var gameLogic: ArcadeGameLogic = ArcadeGameLogic.shared
     
-    var heroInAir = false
+//  var dragInAir = false
     var gameIsEnd = false {
         didSet {
             if gameIsEnd {
@@ -34,7 +34,7 @@ class GameScene: SKScene {
     
     var musicNode = SKAudioNode()
     var backgroundMusicPlayer: AVAudioPlayer?
-    //    var jumpCount = 0
+//  var jumpCount = 0
     
     var timer = Timer()
     
@@ -320,10 +320,14 @@ class GameScene: SKScene {
     
     // MARK: - herodied
     func dragDied() {
-        let deathAnim = SKAction.animate(with: textures.deathTextureArray, timePerFrame: 0.2)
-        dragSpriteNode.run(deathAnim) {
+        let fadeOutAction = SKAction.fadeAlpha(to: 0.0, duration: 0.2)
+        dragSpriteNode.run(fadeOutAction) {
             self.gameLogic.lives(points: 1)
             print("lives: \(self.gameLogic.liveScore)")
+            
+            // Reset the opacity when the drag respawns or when needed
+            let fadeInAction = SKAction.fadeAlpha(to: 1.0, duration: 0.1)
+            self.dragSpriteNode.run(fadeInAction)
         }
         if gameLogic.liveScore == 0 {
             self.restartGame()
