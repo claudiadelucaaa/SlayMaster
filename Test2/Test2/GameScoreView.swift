@@ -12,16 +12,18 @@ struct GameScoreView: View {
     var body: some View {
         
         HStack {
-            Image(systemName: "target")
-                .font(.headline)
+            Text("Score: ")
+                .font(.custom("Atlantis Headline", size: 20, relativeTo: .headline))
+                .foregroundColor(.white)
             Spacer()
             Text("\(score)")
-                .font(.headline)
+                .font(.custom("Atlantis Headline", size: 20, relativeTo: .headline))
+                .foregroundColor(.white)
         }
-        .frame(minWidth: 100)
+        .frame(width: 230, height: 30)
         .padding(24)
         .foregroundColor(.black)
-        .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 0.5)
+        .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 1)
 ))
 
         .cornerRadius(10)

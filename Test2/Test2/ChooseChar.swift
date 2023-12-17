@@ -26,7 +26,7 @@ struct ChooseChar: View {
     
     @State var isSelected = false
     
-    @State private var dragSelected: String = ""
+    @State private var dragSelected: String = "Bianca1"
     
     var body: some View {
         HStack {

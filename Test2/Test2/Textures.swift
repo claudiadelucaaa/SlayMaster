@@ -15,14 +15,11 @@ import Foundation
 import SpriteKit
 
 class Textures {
-    
-    let bg : [SKTexture] = [SKTexture(imageNamed: "background")]
-    
     let biancaWalking : [SKTexture] = [SKTexture(imageNamed: "Bianca1"),
-                                   SKTexture(imageNamed: "Bianca2"),
-                                   SKTexture(imageNamed: "Bianca3"),
-                                   SKTexture(imageNamed: "Bianca4"),
-                                   SKTexture(imageNamed: "Bianca5")
+                                       SKTexture(imageNamed: "Bianca2"),
+                                       SKTexture(imageNamed: "Bianca3"),
+                                       SKTexture(imageNamed: "Bianca4"),
+                                       SKTexture(imageNamed: "Bianca5")
     ]
     
     let laganjaWalking : [SKTexture] = [SKTexture(imageNamed: "Laganja1"),
@@ -30,7 +27,7 @@ class Textures {
                                         SKTexture(imageNamed: "Laganja3")
          ]
     
-    let heroRunTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Run_1"),
+    let dragRunTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Run_1"),
                                              SKTexture(imageNamed: "Warrior_Run_2"),
                                              SKTexture(imageNamed: "Warrior_Run_3"),
                                              SKTexture(imageNamed: "Warrior_Run_4"),
@@ -40,7 +37,7 @@ class Textures {
                                              SKTexture(imageNamed: "Warrior_Run_8"),
     ]
     
-    let heroJumpTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Jump_1"),
+    let dragJumpTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Jump_1"),
                                              SKTexture(imageNamed: "Warrior_Jump_2"),
                                              SKTexture(imageNamed: "Warrior_Jump_3"),
                                              SKTexture(imageNamed: "Warrior_UptoFall_1"),
@@ -88,20 +85,20 @@ class Textures {
                                      SKTexture(imageNamed: "BiancaAttack3"),
                                      SKTexture(imageNamed: "BiancaAttack4"),
                                      SKTexture(imageNamed: "BiancaAttack5"),
-                                   SKTexture(imageNamed: "BiancaAttack6")
+                                     SKTexture(imageNamed: "BiancaAttack6")
     ]
     
-    let laganjaAttack : [SKTexture] = [SKTexture(imageNamed: "Laganja4"),
+    let laganjaAttack : [SKTexture] = [ SKTexture(imageNamed: "Laganja4"),
                                         SKTexture(imageNamed: "Laganja5"),
                                         SKTexture(imageNamed: "Laganja6"),
                                         SKTexture(imageNamed: "Laganja7")
     ]
     let lacaAttack : [SKTexture] = [SKTexture(imageNamed: "laca3"),
                                     SKTexture(imageNamed: "laca2"),
-                                        SKTexture(imageNamed: "laca1"),
-                                        SKTexture(imageNamed: "laca1")
+                                    SKTexture(imageNamed: "laca1"),
+                                    SKTexture(imageNamed: "laca1")
     ]
-    
+
 }
 
 struct drag {

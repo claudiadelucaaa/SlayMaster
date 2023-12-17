@@ -18,34 +18,27 @@ struct GameDurationView: View {
     @Binding var lives: Int
     
     var body: some View {
-        ZStack{
-            Rectangle()
-                .foregroundStyle(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 0.5)))
-                .cornerRadius(10)
-                .frame(height:  60)
             HStack {
-                
                 ForEach(0..<lives, id: \.self) { index in
                     Image("Laca")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 50)
-                    
                 }
                 
                 Spacer()
                 Text("\(lives)")
-                    .font(.headline)
+                    .font(.custom("Atlantis Headline", size: 20, relativeTo: .headline))
                     .foregroundColor(.white)
                     .padding()
-            }
+            }.frame(width: 230, height: 30)
+                .padding(24)
+                .foregroundColor(.black)
+                .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 1)))
+                .cornerRadius(10)
             
         }
-//        .frame(minWidth: 100)
-//        .padding(24)
-        
     }
-}
 
 #Preview {
     GameDurationView(lives: .constant(3))
