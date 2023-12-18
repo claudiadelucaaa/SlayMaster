@@ -15,7 +15,7 @@ struct ContentView: View {
     @State var currentGameState: GameState = .firstTime
     @State var currentDragSelected: DragChoice = .bianca
     // The game logic is a singleton object shared among the different views of the application
-    @StateObject var gameLogic: ArcadeGameLogic = ArcadeGameLogic()
+    @StateObject var gameLogic: ArcadeGameLogic = ArcadeGameLogic.shared
     
     var body: some View {
         switch currentGameState {

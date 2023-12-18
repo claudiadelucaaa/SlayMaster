@@ -35,7 +35,7 @@ struct StartView: View {
                                       size: 30, relativeTo: .headline))
                         .padding(.all, 7.0)
                         .foregroundStyle(Color.white)
-                        .background(Color.pink)
+                        .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 1)))
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                     
                 })

@@ -27,6 +27,13 @@ class Textures {
                                         SKTexture(imageNamed: "Laganja3")
          ]
     
+    let jigglyWalking : [SKTexture] = [SKTexture(imageNamed: "Jiggly1")
+    ]
+    
+    let courtney1Walking : [SKTexture] = [SKTexture(imageNamed: "Courtney1")
+    ]
+    
+    
     let dragRunTextureArray : [SKTexture] = [SKTexture(imageNamed: "man1"),
                                              SKTexture(imageNamed: "man2"),
                                              SKTexture(imageNamed: "man3"),
@@ -105,22 +112,25 @@ class Drags {
     let dragS =         [drag(type: .bianca, 
                               name: "Bianca",
                               image: "Bianca1",
-                              superPower: "Twist",
+                              superPower: "HairSpray",
                               pic: "Biancapic"),
-                         drag(type: .laganja, 
+                         
+                         drag(type: .laganja,
                               name: "Laganja",
                               image: "Laganja1",
-                              superPower: "Lacca",
+                              superPower: "Split",
                               pic: "Laganjapic"),
-                         drag(type: .jiggly, 
+                         
+                         drag(type: .jiggly,
                               name: "Jiggly",
                               image: "Jiggly1",
-                              superPower: "Wings",
+                              superPower: "Umbrella",
                               pic: "Jigglypic"),
-                         drag(type: .courtney, 
+                         
+                         drag(type: .courtney,
                               name: "Courtney",
                               image: "Courtney1",
-                              superPower: "No one",
+                              superPower: "Wings",
                               pic: "Courtneypic")
     ]
 }

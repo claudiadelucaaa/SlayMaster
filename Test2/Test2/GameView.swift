@@ -19,6 +19,8 @@ struct GameView: View {
     
     var arcadeGameScene: GameScene {
         let scene = GameScene()
+        scene.currentDragSelected = gameLogic.currentDragSelected
+        print("Current drag selected: \(gameLogic.currentDragSelected)")
         scene.size = CGSize(width: screenWidth, height: screenHeight)
         scene.scaleMode = .fill
         return scene
@@ -64,8 +66,8 @@ struct GameView: View {
 }
 
 
-
+/*
 #Preview {
-    GameView(currentGameState: .constant(GameState.playing))
+    GameView(currentGameState: .constant(GameState.playing), currentDragSelected: Binding<DragChoice>)
 }
-
+*/

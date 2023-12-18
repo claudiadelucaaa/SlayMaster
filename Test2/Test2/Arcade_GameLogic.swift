@@ -11,8 +11,13 @@ import Foundation
 class ArcadeGameLogic: ObservableObject {
     
     // Single instance of the class
-    static let shared: ArcadeGameLogic = ArcadeGameLogic()
-    
+
+    static let shared: ArcadeGameLogic = ArcadeGameLogic(drag: .bianca)
+    var currentDragSelected:DragChoice
+    init(drag: DragChoice)
+    {
+        currentDragSelected = drag
+    }
     // Function responsible to set up the game before it starts.
     func setUpGame() {
         self.currentScore = 0

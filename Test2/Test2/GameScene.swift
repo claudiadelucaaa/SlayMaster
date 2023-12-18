@@ -41,6 +41,7 @@ class GameScene: SKScene {
     var isMovingToTheRight: Bool = false
     var isMovingToTheLeft: Bool = false
     
+    var currentDragSelected: DragChoice = .bianca
     var dragNodeTexture = SKTexture(imageNamed: "Warrior_Run_1")
     var dragSpriteNode = SKSpriteNode()
     var dragNode = SKNode()
@@ -66,6 +67,7 @@ class GameScene: SKScene {
     var secondWallNode = SKNode()
     
     let textures = Textures()
+    let drags = Drags()
     
     var lastUpdate: TimeInterval = 0
     
@@ -175,7 +177,19 @@ class GameScene: SKScene {
     
     // MARK: - Hero
     func addDrag() {
-        let dragRunAnimation = SKAction.animate(with: textures.biancaWalking ,
+        var dragSelected: [SKTexture] = textures.biancaWalking
+        switch currentDragSelected {
+        case .bianca:
+            dragSelected = textures.biancaWalking
+        case .laganja:
+            dragSelected = textures.laganjaWalking
+        case .jiggly:
+            dragSelected = textures.jigglyWalking
+        case .courtney:
+            dragSelected = textures.courtney1Walking
+        }
+
+        let dragRunAnimation = SKAction.animate(with: dragSelected ,
                                                 timePerFrame: 0.1)
         let dragRun = SKAction.repeatForever(dragRunAnimation)
         dragSpriteNode = SKSpriteNode(texture: dragNodeTexture)
@@ -291,7 +305,7 @@ class GameScene: SKScene {
             
             timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
                 
-                self.fast -= 0.4
+                self.fast -= 0.2
                 self.fast = max(self.fast,2.0)
                 
                 self.timeInterval -= 0.1
@@ -497,16 +511,28 @@ extension GameScene {
     }
     
     func launchAttack(isRightSide: Bool) {
+            var dragAttackSelected: [SKTexture] = textures.biancaAttack
+            switch currentDragSelected {
+            case .bianca:
+                dragAttackSelected = textures.biancaAttack
+            case .laganja:
+                dragAttackSelected = textures.laganjaAttack
+            case .jiggly:
+                dragAttackSelected = textures.jigglyWalking
+            case .courtney:
+                dragAttackSelected = textures.courtney1Walking
+            }
+
         if lacaSpriteNode.parent != nil {
             // La laca ya está en la escena, puedes reiniciar su posición o realizar otras acciones necesarias
             self.lacaSpriteNode.removeFromParent()
         }
         if isRightSide {
             createLaca(space: 70)
-            let deathAnim = SKAction.animate(with: textures.biancaAttack, 
+            let deathAnim = SKAction.animate(with: dragAttackSelected,
                                              timePerFrame: 0.1)
             lacaSpriteNode.xScale *= -1
-            let lacaAnim = SKAction.animate(with: textures.lacaAttack, 
+            let lacaAnim = SKAction.animate(with: dragAttackSelected,
                                             timePerFrame: 0.1)
             
             dragSpriteNode.xScale = 4
@@ -519,9 +545,9 @@ extension GameScene {
             }
         } else {
             createLaca(space: -70)
-            let deathAnim = SKAction.animate(with: textures.biancaAttack, 
+            let deathAnim = SKAction.animate(with: dragAttackSelected,
                                              timePerFrame: 0.1)
-            let lacaAnim = SKAction.animate(with: textures.lacaAttack, 
+            let lacaAnim = SKAction.animate(with: dragAttackSelected,
                                             timePerFrame: 0.1)
             
             dragSpriteNode.xScale = -4

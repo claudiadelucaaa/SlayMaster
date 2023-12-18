@@ -22,11 +22,12 @@ struct ChooseChar: View {
     private var screenWidth: CGFloat { UIScreen.main.bounds.size.width }
     private var screenHeight: CGFloat { UIScreen.main.bounds.size.height }
     
-    @StateObject var gameLogic: ArcadeGameLogic = ArcadeGameLogic()
+    @StateObject var gameLogic: ArcadeGameLogic = ArcadeGameLogic.shared
     
     @State var isSelected = false
     
     @State private var dragSelected: String = "Bianca1"
+    @State var dSSuperPower: String = "HairSpray"
     
     var body: some View {
         HStack {
@@ -38,7 +39,9 @@ struct ChooseChar: View {
                             isSelected.toggle()
                             if isSelected {
                                 dragSelected = drg.image
+                                dSSuperPower = drg.superPower
                                 currentDragSelected  = drg.type
+                                gameLogic.currentDragSelected = drg.type
                             }
                             isSelected.toggle()
                         }, label: {
@@ -61,28 +64,39 @@ struct ChooseChar: View {
                 
             }.padding(.top)
             .frame(width: 350, height: screenHeight)
-            
-            ZStack {
-                //SpotlightView()
-                Image(dragSelected)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 380.0, height: 380.0)
+          
+            VStack{
                 
-                Button(action: {
-                    currentGameState = .playing
-                    print(currentDragSelected)
-                }, label: {
-                    Text("Fight")
+                ZStack {
+                    Text(dSSuperPower)
                         .font(.custom("Atlantis Headline",
-                                      size: 30,
-                                      relativeTo: .headline))
-                        .padding(.all, 7.0)
-                        .foregroundStyle(Color.white)
-                        .background(Color.pink)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                }) .padding(.top, screenHeight - 80)
-            }.frame(width: screenWidth / 2, height: screenHeight)
+                                                    size: 20,
+                                                    relativeTo: .headline))
+                                      .padding(.all, 7.0)
+                                      .foregroundStyle(Color.white)
+                                      .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 1)))
+                                      .clipShape(RoundedRectangle(cornerRadius: 15))
+                                      .position(x: screenWidth / 4, y: 60)
+                    Image(dragSelected)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 380.0, height: 380.0)
+                    
+                    Button(action: {
+                        currentGameState = .playing
+                        print(currentDragSelected)
+                    }, label: {
+                        Text("Fight")
+                            .font(.custom("Atlantis Headline",
+                                          size: 30,
+                                          relativeTo: .headline))
+                            .padding(.all, 7.0)
+                            .foregroundStyle(Color.white)
+                            .background(Color(UIColor(red: 0.98, green: 0.38, blue: 0.61, alpha: 1)))
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                    }) .padding(.top, screenHeight - 80)
+                }.frame(width: screenWidth / 2, height: screenHeight)
+            }
         }
         
         .background(Image("BG_BL")
