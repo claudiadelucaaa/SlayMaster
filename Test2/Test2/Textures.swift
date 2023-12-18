@@ -124,7 +124,7 @@ class Drags {
                          drag(type: .jiggly,
                               name: "Jiggly",
                               image: "Jiggly1",
-                              superPower: "Umbrella",
+                              superPower: "Bloody Leg",
                               pic: "Jigglypic"),
                          
                          drag(type: .courtney,
