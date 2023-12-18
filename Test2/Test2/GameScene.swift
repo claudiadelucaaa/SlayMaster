@@ -517,6 +517,7 @@ extension GameScene {
             let deathAnim = SKAction.animate(with: textures.biancaAttack, timePerFrame: 0.1)
             let lacaAnim = SKAction.animate(with: textures.lacaAttack, timePerFrame: 0.1)
             
+            dragSpriteNode.xScale *= -1
             dragSpriteNode.run(deathAnim) {
                 self.lacaSpriteNode.run(lacaAnim) {
                     self.lacaSpriteNode.removeFromParent()
