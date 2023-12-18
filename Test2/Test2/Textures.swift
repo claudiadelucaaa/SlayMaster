@@ -56,17 +56,10 @@ class Textures {
                                                      (SKTexture(imageNamed: "Layer_0010_1"), 5)
     ]
     
-    let deathTextureArray: [SKTexture] = [SKTexture(imageNamed: "Warrior_Death_1"),
-                                          SKTexture(imageNamed: "Warrior_Death_2"),
-                                          SKTexture(imageNamed: "Warrior_Death_3"),
-                                          SKTexture(imageNamed: "Warrior_Death_4"),
-                                          SKTexture(imageNamed: "Warrior_Death_5"),
-                                          SKTexture(imageNamed: "Warrior_Death_6"),
-                                          SKTexture(imageNamed: "Warrior_Death_7"),
-                                          SKTexture(imageNamed: "Warrior_Death_8"),
-                                          SKTexture(imageNamed: "Warrior_Death_9"),
-                                          SKTexture(imageNamed: "Warrior_Death_10"),
-                                          SKTexture(imageNamed: "Warrior_Death_11"),
+    let deathTextureArray: [SKTexture] = [SKTexture(imageNamed: "manDie1"),
+                                          SKTexture(imageNamed: "manDie2"),
+                                          SKTexture(imageNamed: "manDie3"),
+                                          SKTexture(imageNamed: "manDie4")
     ]
     
     let enemyTexture: [SKTexture] = [SKTexture(imageNamed: "fly01"),
