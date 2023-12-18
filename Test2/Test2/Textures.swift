@@ -27,14 +27,12 @@ class Textures {
                                         SKTexture(imageNamed: "Laganja3")
          ]
     
-    let dragRunTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Run_1"),
-                                             SKTexture(imageNamed: "Warrior_Run_2"),
-                                             SKTexture(imageNamed: "Warrior_Run_3"),
-                                             SKTexture(imageNamed: "Warrior_Run_4"),
-                                             SKTexture(imageNamed: "Warrior_Run_5"),
-                                             SKTexture(imageNamed: "Warrior_Run_6"),
-                                             SKTexture(imageNamed: "Warrior_Run_7"),
-                                             SKTexture(imageNamed: "Warrior_Run_8"),
+    let dragRunTextureArray : [SKTexture] = [SKTexture(imageNamed: "man1"),
+                                             SKTexture(imageNamed: "man2"),
+                                             SKTexture(imageNamed: "man3"),
+                                             SKTexture(imageNamed: "man4"),
+                                             SKTexture(imageNamed: "man5"),
+                                             SKTexture(imageNamed: "man6")
     ]
     
     let dragJumpTextureArray : [SKTexture] = [SKTexture(imageNamed: "Warrior_Jump_1"),

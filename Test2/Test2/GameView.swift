@@ -53,11 +53,11 @@ struct GameView: View {
             gameLogic.restart_Game()
         }
     }
-    
+    /*
     private func presentMainScreen() {
         self.currentGameState = .playing
     }
-    
+    */
     private func presentGameOverScreen() {
         self.currentGameState = .gameOver
     }

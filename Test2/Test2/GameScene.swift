@@ -109,7 +109,7 @@ class GameScene: SKScene {
         self.gameLogic.setUpGame()
         
         addBackground(zPosOffset: 1)
-        createDrag()
+        addDrag()
         createGround()
         createWall()
         // createAudio()
@@ -146,7 +146,7 @@ class GameScene: SKScene {
     func createGround() {
         groundSpriteNode.position = CGPoint.zero
         groundSpriteNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 2,
-                                                                         height: 220))
+                                                                         height: 130))
         groundSpriteNode.physicsBody?.isDynamic = false
         groundSpriteNode.physicsBody?.categoryBitMask = groundMask
         groundSpriteNode.zPosition = 1
@@ -174,20 +174,22 @@ class GameScene: SKScene {
     }
     
     // MARK: - Hero
-    func addDrag(at position: CGPoint) {
+    func addDrag() {
         let dragRunAnimation = SKAction.animate(with: textures.biancaWalking ,
                                                 timePerFrame: 0.1)
         let dragRun = SKAction.repeatForever(dragRunAnimation)
         dragSpriteNode = SKSpriteNode(texture: dragNodeTexture)
         dragSpriteNode.run(dragRun)
+        print(groundNode.position)
         
-        dragSpriteNode.position = position
-        dragSpriteNode.zPosition = 1
+        dragSpriteNode.position = CGPoint(x: size.width/2, y: 135)
+        dragSpriteNode.zPosition = 10
         dragSpriteNode.setScale(4)
         
         dragSpriteNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: dragNodeTexture.size().width - 30,
                                                                        height: dragNodeTexture.size().height + 10))
-        dragSpriteNode.physicsBody?.mass = 0.3
+       // dragSpriteNode.physicsBody?.mass = 0.3
+        dragSpriteNode.physicsBody?.affectedByGravity = false
         dragSpriteNode.physicsBody?.categoryBitMask = dragMask
         dragSpriteNode.physicsBody?.contactTestBitMask = groundMask
         dragSpriteNode.physicsBody?.collisionBitMask = groundMask
@@ -214,9 +216,7 @@ class GameScene: SKScene {
     */
     
     // MARK: - Hero position
-    func createDrag() {
-        addDrag(at: CGPoint(x: size.width / 2, y: size.height / 2))
-    }
+ 
     /*
     func createAudio() {
         guard let musicURL = Bundle.main.url(forResource: "makai-symphony-dragon-slayer",
@@ -238,7 +238,7 @@ class GameScene: SKScene {
         let enemyAnimationRepeat = SKAction.repeatForever(enemyAnimation)
         enemySpriteNode.run(enemyAnimationRepeat)
         
-        enemySpriteNode.setScale(2.0)
+        enemySpriteNode.setScale(1.0)
         
         enemySpriteNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: textures.enemyTexture[0].size().width,
                                                                         height: textures.enemyTexture[0].size().height))
@@ -247,6 +247,7 @@ class GameScene: SKScene {
         if direction {
             print("derecha")
             enemySpriteNode.position = CGPoint(x: size.width - 40, y: size.height / 4)
+            print(enemySpriteNode.position)
             enemySpriteNode.zPosition = 1
             enemySpriteNode.xScale *= -1
             
@@ -259,6 +260,7 @@ class GameScene: SKScene {
             print("izquierda")
             
             enemySpriteNode.position = CGPoint(x: size.width/8 , y: size.height / 12)
+            print(enemySpriteNode.position)
             enemySpriteNode.zPosition = 1
             enemySpriteNode.xScale *= 1
             
@@ -394,7 +396,7 @@ class GameScene: SKScene {
         } else {
             backgroundMusicPlayer?.play()
             
-            addDrag(at: CGPoint(x: size.width / 2, y: size.height / 2))
+            addDrag()
             
             startSpawn()
             
@@ -506,6 +508,9 @@ extension GameScene {
             lacaSpriteNode.xScale *= -1
             let lacaAnim = SKAction.animate(with: textures.lacaAttack, 
                                             timePerFrame: 0.1)
+            
+            dragSpriteNode.xScale = 4
+
             dragSpriteNode.run(deathAnim) {
                 self.lacaSpriteNode.run(lacaAnim) {
                     self.lacaSpriteNode.removeFromParent()
@@ -514,10 +519,12 @@ extension GameScene {
             }
         } else {
             createLaca(space: -70)
-            let deathAnim = SKAction.animate(with: textures.biancaAttack, timePerFrame: 0.1)
-            let lacaAnim = SKAction.animate(with: textures.lacaAttack, timePerFrame: 0.1)
+            let deathAnim = SKAction.animate(with: textures.biancaAttack, 
+                                             timePerFrame: 0.1)
+            let lacaAnim = SKAction.animate(with: textures.lacaAttack, 
+                                            timePerFrame: 0.1)
             
-            dragSpriteNode.xScale *= -1
+            dragSpriteNode.xScale = -4
             dragSpriteNode.run(deathAnim) {
                 self.lacaSpriteNode.run(lacaAnim) {
                     self.lacaSpriteNode.removeFromParent()
