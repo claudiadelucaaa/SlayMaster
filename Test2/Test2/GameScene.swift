@@ -532,7 +532,7 @@ extension GameScene {
             let deathAnim = SKAction.animate(with: dragAttackSelected,
                                              timePerFrame: 0.1)
             lacaSpriteNode.xScale *= -1
-            let lacaAnim = SKAction.animate(with: dragAttackSelected,
+            let lacaAnim = SKAction.animate(with: textures.lacaAttack,
                                             timePerFrame: 0.1)
             
             dragSpriteNode.xScale = 4
@@ -547,7 +547,7 @@ extension GameScene {
             createLaca(space: -70)
             let deathAnim = SKAction.animate(with: dragAttackSelected,
                                              timePerFrame: 0.1)
-            let lacaAnim = SKAction.animate(with: dragAttackSelected,
+            let lacaAnim = SKAction.animate(with: textures.lacaAttack,
                                             timePerFrame: 0.1)
             
             dragSpriteNode.xScale = -4
