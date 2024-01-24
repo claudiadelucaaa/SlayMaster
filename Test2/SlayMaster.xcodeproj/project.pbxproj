@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		654127942B221C8C007789E4 /* Test2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		654127942B221C8C007789E4 /* SlayMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlayMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654127972B221C8C007789E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6541279D2B221C8C007789E4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		654127A42B221C8C007789E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		654F87C02B2B0017005DD4EA /* ChooseChar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChar.swift; sourceTree = "<group>"; };
 		654F87C22B2B0048005DD4EA /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		657DBF932B2358A20023AB98 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		65BEEACE2B608AFF00E5381C /* Test2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Test2 copy-Info.plist"; path = "/Users/claudiadeluca/Documents/GitHub/DragQueenFinal/Test2/Test2 copy-Info.plist"; sourceTree = "<absolute>"; };
 		7853FBFD2B276E63008B06D8 /* Arcade_GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arcade_GameLogic.swift; sourceTree = "<group>"; };
 		7853FC242B286F91008B06D8 /* GameDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDurationView.swift; sourceTree = "<group>"; };
 		7853FC262B286FB1008B06D8 /* GameScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreView.swift; sourceTree = "<group>"; };
@@ -81,13 +82,14 @@
 				654127962B221C8C007789E4 /* Test2 */,
 				654F87B32B2AFFCF005DD4EA /* atlantis */,
 				654127952B221C8C007789E4 /* Products */,
+				65BEEACE2B608AFF00E5381C /* Test2 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		654127952B221C8C007789E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				654127942B221C8C007789E4 /* Test2.app */,
+				654127942B221C8C007789E4 /* SlayMaster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		654127932B221C8B007789E4 /* Test2 */ = {
+		654127932B221C8B007789E4 /* SlayMaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 654127AB2B221C8C007789E4 /* Build configuration list for PBXNativeTarget "Test2" */;
+			buildConfigurationList = 654127AB2B221C8C007789E4 /* Build configuration list for PBXNativeTarget "SlayMaster" */;
 			buildPhases = (
 				654127902B221C8B007789E4 /* Sources */,
 				654127912B221C8B007789E4 /* Frameworks */,
@@ -147,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = Test2;
+			name = SlayMaster;
 			productName = Test2;
-			productReference = 654127942B221C8C007789E4 /* Test2.app */;
+			productReference = 654127942B221C8C007789E4 /* SlayMaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6541278F2B221C8B007789E4 /* Build configuration list for PBXProject "Test2" */;
+			buildConfigurationList = 6541278F2B221C8B007789E4 /* Build configuration list for PBXProject "SlayMaster" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -180,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				654127932B221C8B007789E4 /* Test2 */,
+				654127932B221C8B007789E4 /* SlayMaster */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SFL626YUT9;
+				DEVELOPMENT_TEAM = Z7AQTK42KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -371,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yatziri.NegroniChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiadeluca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -386,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SFL626YUT9;
+				DEVELOPMENT_TEAM = Z7AQTK42KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -400,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yatziri.NegroniChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiadeluca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,7 +413,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6541278F2B221C8B007789E4 /* Build configuration list for PBXProject "Test2" */ = {
+		6541278F2B221C8B007789E4 /* Build configuration list for PBXProject "SlayMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				654127A92B221C8C007789E4 /* Debug */,
@@ -420,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		654127AB2B221C8C007789E4 /* Build configuration list for PBXNativeTarget "Test2" */ = {
+		654127AB2B221C8C007789E4 /* Build configuration list for PBXNativeTarget "SlayMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				654127AC2B221C8C007789E4 /* Debug */,
